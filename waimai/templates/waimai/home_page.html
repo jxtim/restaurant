@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prince Benson Waimai</title>
+</head>
+<body>
+	<h1>Prince Benson Fusion Restaurant</h1>
+<br>
+	<h1>Tasty Treats To Your Door</h1>
+	
+	<h2>Here are all our foods!</h2>
+
+	<!-- food 1 -->
+	<p>cheese burger</p>
+	<img src="http://food.starbucks.com.s3-website-us-east-1.amazonaws.com/assets/img/pairings/pairings-savory1-food.jpg">
+	<br>
+
+	<!-- food 2 -->
+	<p>dumpling</p>
+	<img src="https://chinesenewyear.imgix.net/assets/images/food/chinese-new-year-food-dumplings.jpg?q=50&w=750&auto=format">
+	<br>
+
+	<!-- food 3 -->
+	<p>corn</p>
+	<img src="https://drop.ndtv.com/albums/COOKS/corngallery/creolespicedcornthumb_640x480.jpg">
+	<br>
+	
+	<!--Order Form-->
+	<h2>Place your order</h2>
+	<form action="{% url 'waimai:home_page' %}" method="POST">
+			{% csrf_token %}
+			<imput type ="text" name='food'placeholder = "Please Type Which Food You Want"><br>
+			<textarea name="address"placeholder='Please Type Your Address'></textarea><br>
+			<imput type ='submit' value = 'Place Your Order'>
+	</form>
+
+	<!-- Show Order -->
+	<h1>Your Order</h1>
+	<p>Food Orderd: {{food}}</p>
+	<p>Delivery Address:{{address}}</p>
+
+</body>
+</html>
